@@ -13,14 +13,14 @@ public class KeyGenerator {
 
     public static String generate(int sizeKey) {
 
-        String temp = "";
+        StringBuilder temp = new StringBuilder();
         while (temp.length() < sizeKey) {
             int max = 9999;
-            temp += words[random.nextInt(randomWords)]
-                    + chars[random.nextInt(randomChar)]
-                    + random.nextInt(max);
+            temp.append(words[random.nextInt(randomWords)])
+                    .append(chars[random.nextInt(randomChar)])
+                    .append(random.nextInt(max));
         }
-        return temp;
+        return temp.toString();
     }
 
 }
