@@ -12,7 +12,7 @@ public class KeyGenerator {
     private static int randomChar = random.nextInt(chars.length);
 
     public static String generate(int sizeKey) {
-
+// TODO: 19.09.17 сделать проверку sizeKey на соразмерность массивам 
         StringBuilder temp = new StringBuilder();
         while (temp.length() < sizeKey) {
             int max = 9999;
