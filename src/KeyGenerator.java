@@ -11,14 +11,22 @@ public class KeyGenerator {
     private static int randomWords = random.nextInt(words.length);
     private static int randomChar = random.nextInt(chars.length);
 
-    public static String generate(int sizeKey) {
+    public static String generate(int sizeKey, boolean chars) {
 // TODO: 19.09.17 сделать проверку sizeKey на соразмерность массивам 
         StringBuilder temp = new StringBuilder();
         while (temp.length() < sizeKey) {
             int max = 9999;
-            temp.append(words[random.nextInt(randomWords)])
+//04.05.18 Проверка, нужны ли спецсимволы            
+            if (chars){
+                temp.append(words[random.nextInt(randomWords)])
                     .append(chars[random.nextInt(randomChar)])
                     .append(random.nextInt(max));
+                }
+            else
+                {
+                temp.append(words[random.nextInt(randomWords)])
+                    .append(random.nextInt(max));
+                }
         }
         return temp.toString();
     }
